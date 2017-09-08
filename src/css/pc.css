@@ -1,18 +1,47 @@
-.logo{
-  align-items: center;
-  display: flex;
+
+
+.newsListUL{
+  list-style: none;
+  text-decoration: none;
+  float: left;
+
+
+}
+.newsListUL li {
+  height: 120px;
+  padding: 10px 0;
+  border-bottom: .5px solid rgb(232, 232, 232);
+
 }
 
-.logo img{
-  width: 48px;
-  height: 48px;
+.newsListUL .right{
+   text-align: left;
+   display: flex;
+  flex-direction: column;
+  justify-content:center;
+  padding-left: 25px;
+
 }
 
-.logo span{
-  font-size: 24px;
-  padding-left: 5px;
+
+.newsListUL li a{
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  display: inline-block;
+  float: left;
 }
 
-.footer{
-  text-align: center;
+.newsListUL img{
+  display: inline-block;
+  float: left;
+}
+
+.newsListUL span{
+  color: #777;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 10px;
+  display: inline-block;
+  float: left;
 }
