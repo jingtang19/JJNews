@@ -1,0 +1,2 @@
+# JJNews
+daily jj new
