@@ -3,11 +3,14 @@
  */
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 import LogoImage from '../../../images/logo.svg';
 import Person from 'react-icons/lib/md/person';
+import MdChevronLeft  from 'react-icons/lib/md/chevron-left';
 import { Tabs,message,Form,Input,Button,Modal} from 'antd';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
+
 
 
 
@@ -36,7 +39,7 @@ const Logo = styled.div`
 
 
 //核心组件
-class MobileHeader extends Component{
+class MobileHeaderBack extends Component{
     constructor(){
         super()
         this.state={
@@ -131,7 +134,7 @@ class MobileHeader extends Component{
         return(
             <div>
                 <TopBar>
-                    <Person style={{marginLeft:'3%', opacity:'0'}}/>
+                    <Link  style={{marginLeft:'3%',width: '25px',height:'25px',display:'inline-block'}}to="/"> <MdChevronLeft style={{width: '25px',height:'25px',color:'white'}}/></Link>
                    <Logo/>
                     <Person style={{width: '20px',height:'20px',marginTop:'12px',marginRight:'3%'}} onClick={()=>this.setModalVisible(true)}/>
                 </TopBar>
@@ -233,4 +236,4 @@ class MobileHeader extends Component{
     };
 };
 
-export default MobileHeader = Form.create({})(MobileHeader);
+export default MobileHeaderBack = Form.create({})(MobileHeaderBack);

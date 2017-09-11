@@ -7,7 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import MobileNews from './mobile_news';
 import '../../../css/mobile.css';
 import SlideShow from '../public/slideshow';
-
+import { BackTop} from 'antd';
 
 
 //核心组件
@@ -18,12 +18,14 @@ export default class MobileBody extends Component{
 
                 <Tabs >
                     <div className="tabsWrap">
-                    <TabList className="tabsList">
-                        <Tab>头条</Tab>
-                        <Tab>社会</Tab>
-                        <Tab>国内</Tab>
-                        <Tab>国际</Tab>
+
+                    <TabList className="tabsList" style={{background:''}}>
+                        <Tab style={{borderRadius:0,height:'36px'}}>头条</Tab>
+                        <Tab style={{borderRadius:0,height:'36px'}}>社会</Tab>
+                        <Tab style={{borderRadius:0,height:'36px'}}>国内</Tab>
+                        <Tab style={{borderRadius:0,height:'36px'}}>国际</Tab>
                     </TabList>
+
                     </div>
 
                     <TabPanel>
@@ -40,6 +42,8 @@ export default class MobileBody extends Component{
                         <MobileNews count={10} type="guoji" bordered="false"/>
                     </TabPanel>
                 </Tabs>
+
+                <BackTop style={{right:'5%',bottom:'5%'}}/>
             </div>
         );
     };

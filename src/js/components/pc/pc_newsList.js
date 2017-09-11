@@ -51,6 +51,7 @@ export default class NewsList extends Component{
             <div style={{
                 background:'#efefef',
                 padding:'15px 20px',
+                borderTop:'3px solid #00D1FF',
             }}>
                 <h2>{this.props.Newstitle}</h2>
                 <hr/>

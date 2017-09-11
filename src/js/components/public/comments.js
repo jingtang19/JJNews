@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import { Form,Input,Button,Card,message} from 'antd';
 const FormItem = Form.Item;
 
@@ -53,7 +52,7 @@ class Comments extends Component{
         const commentList = comments.length
             ?
             comments.map((comment,index)=>(
-               <Card key={index} title={comment.username} extra={<a href="#">发布于{comment.datetime}</a>} >
+               <Card key={index} title={comment.username} extra={<span>发布于{comment.datetime}</span>} >
                     <p>{comment.Comments}</p>
                </Card>
             ))

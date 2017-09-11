@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import { Menu, Icon,Tabs,message,Form,Input,Button,Checkbox,Modal} from 'antd';
+import {Icon,Tabs,message,Form,Input,Button,Modal} from 'antd';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 
@@ -32,7 +31,8 @@ class PCHeader extends Component{
 
 
     componentWillMount(){
-        if (localStorage.userid!='') {
+        console.log(localStorage.userid);
+        if (localStorage.userid!=='') {
             this.setState({hasLogined:true});
             this.setState({userNickName:localStorage.userNickName,userid:localStorage.userid});
         }
@@ -67,7 +67,7 @@ class PCHeader extends Component{
                         localStorage.userNickName = json.NickUserName;
                         localStorage.userid = json.UserId;
                     });
-                if(this.state.action=='login'){
+                if(this.state.action==='login'){
                     this.setState({hasLogined:'true'});
                 }
 
@@ -124,7 +124,7 @@ class PCHeader extends Component{
         return(
             <div>
             <TopBar>
-                <div style={{margin:'auto' ,float:'left', marginRight:'5%'}} ><Icon type="mail" />Email: jingtang19@hotmail.com</div>
+                <div style={{margin:'auto' ,float:'left', marginLeft:'5%'}} ><Icon type="mail" />  Email: jingtang19@hotmail.com</div>
                 <div className="topRight" style={{margin:'auto' ,float:'right', marginRight:'5%'}}>
                     {userShow}
                 </div>

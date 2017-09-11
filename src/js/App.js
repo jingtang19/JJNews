@@ -4,6 +4,7 @@ import PCIndex from './components/pc_index';
 import MobileIndex from './components/mobile_index';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import PCDetail from "./components/pc/pc_detail";
+import MobileDetail from "./components/mobile/mobile_detail";
 import 'antd/dist/antd.css';
 import '../css/App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact component={MobileIndex} path="/"/>
+                        <Route component={MobileDetail} path="/details/:uniquekey"/>
                     </Switch>
                 </BrowserRouter>
             </MediaQuery>

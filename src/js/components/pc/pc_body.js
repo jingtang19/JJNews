@@ -54,25 +54,22 @@ export default class PCBody extends Component{
 
     }}
 
+    setTabIndex(tabIndex){
+        this.setState({ tabIndex })
+    }
+
 
 
 
 
     render(){
-        const tabStyle={
-            width:"110px",
-            height:'40px',
-            textAlign:'center',
-            lineHeight:'40px'
-
-        }
 
 
         return(
 
 
            <Wrap>
-               <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+               <Tabs selectedIndex={this.state.tabIndex} onSelect={this.setTabIndex.bind(this)}>
                <LeftNav>
                    <Logo/><br/>
                    <Affix offsetTop={30}>
@@ -88,7 +85,7 @@ export default class PCBody extends Component{
                 </LeftNav>
                <MiddleContent>
                    <TabPanel>
-                       <SlideShow imgWidth="660px"/>
+                       <SlideShow imgWidth="660px" imgHeight="340px"/>
                        <PCNews count={10} type="top" bordered="false" imgWidth="158px" imgHeight="100px"/>
                    </TabPanel>
                    <TabPanel>

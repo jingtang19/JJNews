@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Button} from 'antd';
 
 
 
@@ -61,16 +62,60 @@ export default class SlideShow extends Component{
 
     render(){
         const imgStyle={
-            width:this.props.imgWidth
+            width:this.props.imgWidth,
+            height:this.props.imgHeight
+        }
+
+        const titleStyle ={
+            position:'absolute',
+            bottom:'0',
+            left:'0',
+            color:'#fff',
+            fontSize:'20px',
+            display:'inline-block',
+            width:this.props.imgWidth,
+            whiteSpace:'nowrap',
+            overflow:'hidden',
+            textOverflow:'ellipsis',
+            padding:'55px 20px 15px',
+            height:'100px',
+            // background:'-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.19) 29%, rgba(0,0,0,0.65) 100%)',
+            // background: '-webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.19) 29%,rgba(0,0,0,0.65) 100%)',
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.35) 29%,rgba(0,0,0,1) 100%)',
+            filter: 'progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#a6000000",GradientType=0 )',
+        }
+
+        const prevStyle={
+            position:'absolute',
+            top:'45%',
+            left:'20px',
+            background:'#000',
+            border:'none',
+            opacity:'.7',
+        }
+
+        const nextStyle={
+            position:'absolute',
+            top:'45%',
+            right:'20px',
+            background:'#000',
+            border:'none',
+            opacity:'.7',
         }
 
         return(
 
-                       <div id="slider">
+                       <div id="slider" style={{
+                           position:'relative',
+                           borderTop:'3px solid #00D1FF',
+                           width:this.props.imgWidth,
+                           height:this.props.imgHeight,
+                           overflow:"hidden",
+                       }}>
                            <img src={this.state.currentImg}  style={imgStyle} alt="图片"/>
-                           <span>{this.state.currentTitle}</span>
-                           <button onClick={this.prevImg}>prev</button>
-                           <button onClick={this.nextImg}>next</button>
+                           <span style={titleStyle}>{this.state.currentTitle}</span>
+                           <Button type="primary" shape="circle" icon="caret-left" size={'default'} onClick={this.prevImg} style={prevStyle}/>
+                           <Button type="primary" shape="circle" icon="caret-right" size={'default'}onClick={this.nextImg} style={nextStyle}/>
                        </div>
 
         );
